@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2> My First Web Pages </h2>
+<p> First Paragraph </p>
+
+<p id="demo"></p>
+
+<div id="tambah"></div>
+<div id="mod"></div>
+<div id="kurang"></div>
+
+<button id="dom" onclick="dom()">ProDi</button>
+
+<script>
+	document.getElementById("demo").innerHTML = 4 + 1;
+	var length = 8;
+	var width = 3;
+	
+	var tambah = length + width;
+	var mod = length % width;
+	var kurang = length - width;
+	
+	document.getElementById("tambah").innerHTML = tambah;
+	document.getElementById("mod").innerHTML = mod;
+	document.getElementById("kurang").innerHTML = kurang;
+	
+	var Fakultas = ["FMIPA", "FKIP", "FT", "FK"];
+	Fakultas.push("FP");
+	
+	var len = Fakultas.length;
+	var  srt = Fakultas.sort();
+	console.log(len);
+	console.log(srt);
+	document.write(srt);
+	
+	var person = {
+		firstName:"handy",
+		lastName:"potter",
+		age:"17",
+		eyeColor:"grey",
+		fullname:function(){
+			return this.firstName + " " + this.lastName;
+		}
+	};
+	console.log(person.firstName);
+	
+	function myFunction(p1,p2){
+		return p1*p2;
+	}
+	console.log(myFunction(2,3));
+	
+	var text = "";
+	for(i=0;i<5;i++){
+		text += i + ", ";
+	}
+	console.log(text);
+	
+	var text2 = "";
+	while(i<10){
+		text2 += i + ", ";
+		i++;
+	}
+	console.log(text2);
+	
+	var text3 = "";
+	do{
+		text3 += i + ", ";
+		i++;
+	} while(i <= 12);
+	console.log(text3);
+	
+	function dom(){
+		document.getElementById("dom").innerHTML="S1 IF";
+	}
+	
+	function validate(){
+		var val = document.forms["myForm"]["fName"].value;
+		if (x==null | x==""){
+			alert("harus diisi");
+			return false;
+		}
+	}
+</script>
+
+<form name = "myForm" action="demo_form.asp" onsubmit="return validate()" method="post">
+first name : <input type="text" name="fName">
+<input type="submit" value="submit">
+</form>
+
+</body>
+</html>
